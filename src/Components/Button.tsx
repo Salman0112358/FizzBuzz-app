@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import FizzBuzzCheck from '../utils/FizzBuzzCheck'
 let Buttoncounter = 0
 
 export default function Button ():JSX.Element{
