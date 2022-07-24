@@ -1,7 +1,8 @@
-import { greet } from "./utils/greet";
+import Button from './Components/Button'
 
 function App(): JSX.Element {
-  return <h1>{greet("World")}</h1>;
+  return (
+    <Button/>
+  )
 }
-
 export default App;
