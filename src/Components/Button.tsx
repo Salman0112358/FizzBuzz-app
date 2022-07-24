@@ -1,29 +1,27 @@
-import {useState} from 'react'
-import FizzBuzzCheck from '../utils/FizzBuzzCheck'
-let Buttoncounter = 0
+import { useState } from "react";
+import FizzBuzzCheck from "../utils/FizzBuzzCheck";
+let Buttoncounter = 0;
 
-export default function Button ():JSX.Element{
+export default function Button(): JSX.Element {
+  const [currentVal, nextVal] = useState<number | string>(`0 -`);
+  const [currentArray, nextArray] = useState<(number | string)[]>([]);
 
-    
-    const [currentVal, nextVal] = useState<(number|string)>(`0 -`)
-    const [currentArray, nextArray] = useState<(number|string)[]>([])
+  const result = () => {
+    Buttoncounter += 1;
+    nextVal(`${FizzBuzzCheck(Buttoncounter)}-`);
+    nextArray([...currentArray, currentVal]);
+  };
 
-    const result = () => {
-
-        Buttoncounter += 1
-        nextVal(FizzBuzzCheck(Buttoncounter))
-        nextArray([...currentArray,currentVal]) 
-    }
-
-    return (
-        <>
-        <h3>Press the button below to play</h3>
-        <button className="main-btn" onClick={result}>FizzBuzz</button>
-        <p>{currentArray}</p>
-        </>
-    )
+  return (
+    <>
+      <h3>Press the button below to play</h3>
+      <button className="main-btn" onClick={result}>
+        FizzBuzz
+      </button>
+      <p>{currentArray}</p>
+    </>
+  );
 }
-
 
 /*
     const result = () => {

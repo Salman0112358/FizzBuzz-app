@@ -1,11 +1,10 @@
-import Button from './Components/Button'
+import Button from "./Components/Button";
 
 function App(): JSX.Element {
   return (
     <>
-    <Button/>
+      <Button />
     </>
- 
-  )
+  );
 }
 export default App;
